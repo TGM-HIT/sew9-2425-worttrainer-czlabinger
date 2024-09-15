@@ -1,0 +1,78 @@
+<mxfile host="app.diagrams.net" modified="2024-09-15T22:37:56.863Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0" etag="O0JIe4mn54kFLl7FccHc" version="24.4.9" type="device">
+  <diagram name="Page-1" id="6_xeMmDJv4vmlusiRsLN">
+    <mxGraphModel dx="1662" dy="750" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Ou3kEWdW5UKycBWzLsYp-1" value="&lt;div&gt;WortTrainer&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="50" width="270" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="Ou3kEWdW5UKycBWzLsYp-2" value="&lt;div&gt;- wl: WortListe&lt;/div&gt;&lt;div&gt;- selectedIndex: int&lt;/div&gt;&lt;div&gt;- richtig: int = 0&lt;/div&gt;&lt;div&gt;- eingaben: int = 0&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Ou3kEWdW5UKycBWzLsYp-1">
+          <mxGeometry y="26" width="270" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="Ou3kEWdW5UKycBWzLsYp-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Ou3kEWdW5UKycBWzLsYp-1">
+          <mxGeometry y="110" width="270" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Ou3kEWdW5UKycBWzLsYp-4" value="&lt;div&gt;+ WortTrainer(words: String[], urls: String[])&lt;/div&gt;&lt;div&gt;+ WortTrainer(wl: WortListe)&lt;/div&gt;&lt;div&gt;+ pickRandomWord(): String&lt;/div&gt;&lt;div&gt;+ checkSelectedWord(): boolean&lt;/div&gt;&lt;div&gt;+ checkSelectedWordIgnoreCase(): boolean&lt;/div&gt;&lt;div&gt;+ getWordList(): WortListe&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Ou3kEWdW5UKycBWzLsYp-1">
+          <mxGeometry y="118" width="270" height="102" as="geometry" />
+        </mxCell>
+        <mxCell id="Ou3kEWdW5UKycBWzLsYp-5" value="&lt;div&gt;WortListe&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="80" width="270" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="Ou3kEWdW5UKycBWzLsYp-6" value="- words: WortEintrag[]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Ou3kEWdW5UKycBWzLsYp-5">
+          <mxGeometry y="26" width="270" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="Ou3kEWdW5UKycBWzLsYp-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Ou3kEWdW5UKycBWzLsYp-5">
+          <mxGeometry y="50" width="270" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Ou3kEWdW5UKycBWzLsYp-8" value="&lt;div&gt;+ WortListe(words: String[], urls: String[])&lt;/div&gt;&lt;div&gt;+ getWords(): String[]&lt;/div&gt;&lt;div&gt;+ getUrls(): String[]&lt;/div&gt;&lt;div&gt;+ removeWord(word: String): boolean&lt;/div&gt;&lt;div&gt;+ addWord(word: String, url: String): void&lt;/div&gt;&lt;div&gt;+ getLength(): int&lt;/div&gt;&lt;div&gt;+ toString(): String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Ou3kEWdW5UKycBWzLsYp-5">
+          <mxGeometry y="58" width="270" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="Ou3kEWdW5UKycBWzLsYp-16" value="WortEintrag" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="370" width="220" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="Ou3kEWdW5UKycBWzLsYp-17" value="&lt;div&gt;- word: String&lt;/div&gt;&lt;div&gt;- url: String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Ou3kEWdW5UKycBWzLsYp-16">
+          <mxGeometry y="26" width="220" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="Ou3kEWdW5UKycBWzLsYp-18" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="Ou3kEWdW5UKycBWzLsYp-16">
+          <mxGeometry y="70" width="220" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="Ou3kEWdW5UKycBWzLsYp-19" value="&lt;div&gt;+ WortEintrag(word: String, url: String)&lt;/div&gt;&lt;div&gt;- &lt;u&gt;checkUrl(url: String): boolean&lt;/u&gt;&lt;/div&gt;&lt;div&gt;+ setWord(word: String): void&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ setUrl(url: String): void&lt;/div&gt;&lt;div&gt;+ getWord(): String&lt;/div&gt;&lt;div&gt;+ getUrl(): String&lt;/div&gt;&lt;div&gt;+ toString(): String&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="Ou3kEWdW5UKycBWzLsYp-16">
+          <mxGeometry y="78" width="220" height="122" as="geometry" />
+        </mxCell>
+        <mxCell id="Ou3kEWdW5UKycBWzLsYp-23" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="Ou3kEWdW5UKycBWzLsYp-16" target="Ou3kEWdW5UKycBWzLsYp-8">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="290" y="390" as="sourcePoint" />
+            <mxPoint x="590" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ou3kEWdW5UKycBWzLsYp-24" value="- words" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Ou3kEWdW5UKycBWzLsYp-23">
+          <mxGeometry x="0.2671" y="-1" relative="1" as="geometry">
+            <mxPoint x="27" y="46" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ou3kEWdW5UKycBWzLsYp-25" value="&lt;div&gt;1..*&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Ou3kEWdW5UKycBWzLsYp-23">
+          <mxGeometry x="-0.4" relative="1" as="geometry">
+            <mxPoint x="-21" y="6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ou3kEWdW5UKycBWzLsYp-26" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;" edge="1" parent="1" source="Ou3kEWdW5UKycBWzLsYp-5" target="Ou3kEWdW5UKycBWzLsYp-1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="290" y="390" as="sourcePoint" />
+            <mxPoint x="350" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ou3kEWdW5UKycBWzLsYp-27" value="&lt;div&gt;- wl&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Ou3kEWdW5UKycBWzLsYp-26">
+          <mxGeometry x="0.4826" y="-2" relative="1" as="geometry">
+            <mxPoint x="86" y="20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ou3kEWdW5UKycBWzLsYp-28" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Ou3kEWdW5UKycBWzLsYp-26">
+          <mxGeometry x="-0.4703" y="-2" relative="1" as="geometry">
+            <mxPoint x="15" y="-21" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
