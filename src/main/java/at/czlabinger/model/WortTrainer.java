@@ -21,22 +21,18 @@ public class WortTrainer {
         return this.wl.getWord(new Random().nextInt(wl.getLength()));
     }
 
-    public boolean checkSelectedWord(String input) {
+    public void checkSelectedWord(String input) {
         eingaben++;
         if(this.wl.getWord(selectedIndex).equals(input)) {
             richtig++;
-            return true;
         }
-        return false;
     }
 
-    public boolean checkSelectedWordIgnoreCase(String input) {
+    public void checkSelectedWordIgnoreCase(String input) {
         eingaben++;
         if(this.wl.getWord(selectedIndex).equalsIgnoreCase(input)) {
             richtig++;
-            return true;
         }
-        return false;
     }
 
     public WortListe getWortListe() {
@@ -47,4 +43,11 @@ public class WortTrainer {
         return this.selectedIndex;
     }
 
+    public int getRichtig(){
+        return this.richtig;
+    }
+
+    public int getEingaben() {
+        return eingaben;
+    }
 }

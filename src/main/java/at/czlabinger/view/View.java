@@ -5,6 +5,8 @@ import at.czlabinger.Controller;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.URL;
 
@@ -16,16 +18,16 @@ public class View {
     private JPanel panelE = new JPanel();
     private JPanel panelS = new JPanel();
     private JLabel text = new JLabel("Welches Wort wird unten dargestellt?");
-    private JLabel correct = new JLabel("Richtig: ");
-    private JLabel inputs = new JLabel("Angezeigt: ");
-    private JTextField textField = new JTextField();
-    private Image image;
+    private JLabel correct = new JLabel("Richtig: 0");
+    private JLabel inputs = new JLabel("Eingaben: 0");
+    private JTextField textField = new JTextField(15);
     private JLabel imageLabel = new JLabel();
     private JButton check = new JButton("Check");
     private JButton save = new JButton("Save");
     private JButton load = new JButton("Load");
     private JButton newGame = new JButton("New Game");
     private JButton addWord = new JButton("Add word");
+    JFrame frame = new JFrame();
 
     public View(Controller c) {
         this.c = c;
@@ -37,7 +39,7 @@ public class View {
             URL url = new URL(c.getImageUrl());
             ImageIcon imageIcon = new ImageIcon(ImageIO.read(url));
             Image image = imageIcon.getImage();
-            Image newimg = image.getScaledInstance(120, 120,  java.awt.Image.SCALE_SMOOTH);
+            Image newimg = image.getScaledInstance(220, 220,  java.awt.Image.SCALE_SMOOTH);
             imageIcon = new ImageIcon(newimg);
             imageLabel.setIcon(imageIcon);
         } catch (IOException e) {
@@ -62,10 +64,67 @@ public class View {
         panel.add(panelE, BorderLayout.CENTER);
         panel.add(panelS, BorderLayout.SOUTH);
 
-        JWindow window = new JWindow();
-        window.add(panel);
-        window.setSize(new Dimension(500, 500));
-        window.setVisible(true);
+        frame.add(panel);
+        frame.setVisible(true);
+        frame.setSize(new Dimension(550, 350));
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+        check.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                c.check();
+            }
+        });
+
+        save.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                c.save();
+            }
+        });
+
+        load.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                c.load();
+            }
+        });
+
+        newGame.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                c.newGame();
+            }
+        });
+
+        addWord.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                c.addWord(textField.getText());
+            }
+        });
+
+    }
+
+    public String getInput() {
+        return this.textField.getText();
+    }
+
+    public void update() {
+        try {
+            URL url = new URL(c.getImageUrl());
+            ImageIcon imageIcon = new ImageIcon(ImageIO.read(url));
+            Image image = imageIcon.getImage();
+            Image newimg = image.getScaledInstance(220, 220,  java.awt.Image.SCALE_SMOOTH);
+            imageIcon = new ImageIcon(newimg);
+            imageLabel.setIcon(imageIcon);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        this.textField.setText("");
+        this.correct.setText("Richtig: " + c.getCorrect());
+        this.inputs.setText("Angezeigt: " + c.getInputs());
     }
 
 }
