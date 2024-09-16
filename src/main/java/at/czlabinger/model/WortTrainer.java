@@ -18,7 +18,8 @@ public class WortTrainer {
     }
 
     public String pickRandomWord() {
-        return this.wl.getWord(new Random().nextInt(wl.getLength()));
+        this.selectedIndex = new Random().nextInt(wl.getLength());
+        return this.wl.getWord(selectedIndex);
     }
 
     public void checkSelectedWord(String input) {
