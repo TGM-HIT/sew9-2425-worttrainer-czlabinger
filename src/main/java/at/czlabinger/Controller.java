@@ -12,7 +12,11 @@ public class Controller {
     private WortTrainer wt;
 
     public Controller() {
-        this.v = new View(this);
         this.wt = new WortTrainer(new String[]{"Hund"}, new String[]{"https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg"});
+        this.v = new View(this);
+    }
+
+    public String getImageUrl() {
+        return wt.getWortListe().getUrl(wt.getSelectedIndex());
     }
 }

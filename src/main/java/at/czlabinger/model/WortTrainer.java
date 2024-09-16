@@ -43,4 +43,8 @@ public class WortTrainer {
         return this.wl;
     }
 
+    public int getSelectedIndex() {
+        return this.selectedIndex;
+    }
+
 }
