@@ -60,40 +60,15 @@ public class View {
         frame.setSize(new Dimension(550, 350));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        check.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                c.check();
-            }
-        });
+        check.addActionListener(e -> c.check());
 
-        save.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                c.save();
-            }
-        });
+        save.addActionListener(e -> c.save());
 
-        load.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                c.load();
-            }
-        });
+        load.addActionListener(e -> c.load());
 
-        newGame.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                c.newGame();
-            }
-        });
+        newGame.addActionListener(e -> c.newGame());
 
-        addWord.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                c.addWord(textField.getText());
-            }
-        });
+        addWord.addActionListener(e -> c.addWord(textField.getText()));
 
     }
 
