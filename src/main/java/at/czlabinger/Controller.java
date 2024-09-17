@@ -18,7 +18,7 @@ public class Controller {
     }
 
     public String getImageUrl() {
-        return this.wt.getWortListe().getUrl(wt.getSelectedIndex());
+        return this.wt.getWl().getUrl(wt.getSelectedIndex());
     }
 
     public int getCorrect() {

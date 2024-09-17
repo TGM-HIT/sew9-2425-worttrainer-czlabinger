@@ -1,8 +1,11 @@
 package at.czlabinger.model;
 
+import lombok.Getter;
+
 import java.io.Serializable;
 import java.util.Random;
 
+@Getter
 public class WortTrainer implements Serializable {
 
     private WortListe wl;
@@ -35,22 +38,6 @@ public class WortTrainer implements Serializable {
         if(this.wl.getWord(selectedIndex).equalsIgnoreCase(input)) {
             richtig++;
         }
-    }
-
-    public WortListe getWortListe() {
-        return this.wl;
-    }
-
-    public int getSelectedIndex() {
-        return this.selectedIndex;
-    }
-
-    public int getRichtig(){
-        return this.richtig;
-    }
-
-    public int getEingaben() {
-        return eingaben;
     }
 
     public void addWord(String word, String url) {

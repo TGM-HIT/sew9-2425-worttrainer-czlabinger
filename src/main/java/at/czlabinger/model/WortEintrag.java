@@ -1,10 +1,15 @@
 package at.czlabinger.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+@Setter
+@Getter
 public class WortEintrag implements Serializable {
 
     private String word;
@@ -26,22 +31,6 @@ public class WortEintrag implements Serializable {
         } catch (MalformedURLException | URISyntaxException e) {
             return false;
         }
-    }
-
-    public void setWord(String word) {
-        this.word = word;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public String getWord() {
-        return this.word;
-    }
-
-    public String getUrl() {
-        return url;
     }
 
     @Override
