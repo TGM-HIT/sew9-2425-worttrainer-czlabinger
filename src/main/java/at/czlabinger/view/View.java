@@ -74,7 +74,7 @@ public class View {
 
     public String getInput() {
         if (textField.getText().isEmpty()) {
-            new JOptionPane("Input cant be empty!").setVisible(true);
+            JOptionPane.showMessageDialog(null, "Input can`t be empty");
             return null;
         }
         return this.textField.getText();
