@@ -14,10 +14,17 @@ public class WortTrainer implements Serializable {
     private int eingaben = 0;
 
     public WortTrainer(String[] words, String[] urls) {
+        if (words.length != urls.length) {
+            throw new IllegalArgumentException("Wrong number of words and URLs");
+        }
+
         this.wl = new WortListe(words, urls);
     }
 
     public WortTrainer(WortListe wl) {
+        if (wl == null) {
+            throw new IllegalArgumentException("WortListe cannot be null");
+        }
         this.wl = wl;
     }
 
