@@ -35,16 +35,6 @@ public class View {
     }
 
     private void start() {
-        try {
-            URL url = new URL(c.getImageUrl());
-            ImageIcon imageIcon = new ImageIcon(ImageIO.read(url));
-            Image image = imageIcon.getImage();
-            Image newimg = image.getScaledInstance(220, 220,  java.awt.Image.SCALE_SMOOTH);
-            imageIcon = new ImageIcon(newimg);
-            imageLabel.setIcon(imageIcon);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
 
         textField.setEditable(true);
         textField.setEnabled(true);
@@ -65,9 +55,9 @@ public class View {
         panel.add(panelS, BorderLayout.SOUTH);
 
         frame.add(panel);
+        this.update();
         frame.setVisible(true);
         frame.setSize(new Dimension(550, 350));
-        frame.setVisible(true);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         check.addActionListener(new ActionListener() {
