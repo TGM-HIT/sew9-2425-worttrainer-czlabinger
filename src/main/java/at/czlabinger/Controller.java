@@ -36,11 +36,12 @@ public class Controller {
     }
 
     public void save() {
-        SaveLoadHelper.save(this.wt, "$HOME/Downloads/worttrainer.save");
+        SaveLoadHelper.save(this.wt, "/home/stoffi05/Downloads/worttrainer.save");
     }
 
     public void load() {
-        this.wt = SaveLoadHelper.load("$HOME/Downloads/worttrainer.save");
+        this.wt = SaveLoadHelper.load("/home/stoffi05/Downloads/worttrainer.save");
+        this.v.update();
     }
 
     public void newGame() {

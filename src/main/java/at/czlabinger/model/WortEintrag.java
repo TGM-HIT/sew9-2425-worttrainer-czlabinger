@@ -1,10 +1,11 @@
 package at.czlabinger.model;
 
+import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-public class WortEintrag {
+public class WortEintrag implements Serializable {
 
     private String word;
     private String url;

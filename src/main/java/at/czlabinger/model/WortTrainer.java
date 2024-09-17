@@ -1,8 +1,9 @@
 package at.czlabinger.model;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class WortTrainer {
+public class WortTrainer implements Serializable {
 
     private WortListe wl;
     private int selectedIndex;

@@ -1,6 +1,8 @@
 package at.czlabinger.model;
 
-public class WortListe {
+import java.io.Serializable;
+
+public class WortListe implements Serializable {
 
     private WortEintrag[] words;
 
