@@ -1,6 +1,8 @@
 package at.czlabinger.model;
 
-public class WortListe {
+import java.io.Serializable;
+
+public class WortListe implements Serializable {
 
     private WortEintrag[] words;
 
@@ -35,11 +37,12 @@ public class WortListe {
         for (int i = 0; i < this.words.length; i++) {
             newWords[i] = this.words[i];
         }
-        newWords[words.length + 1] = we;
+        newWords[words.length] = we;
+        this.words = newWords;
     }
 
     public int getLength() {
-        return this.words.length;
+        return this.words.length ;
     }
 
     public String getUrl(int index) {

@@ -1,11 +1,12 @@
 package at.czlabinger;
 
+import at.czlabinger.model.SaveLoadHelper;
 import at.czlabinger.model.WortTrainer;
 import at.czlabinger.view.View;
 
 public class Controller {
     public static void main(String[] args) {
-        Controller c = new Controller();
+        new Controller();
     }
 
     private View v;
@@ -35,11 +36,12 @@ public class Controller {
     }
 
     public void save() {
-        //TODO: Implement
+        SaveLoadHelper.save(this.wt, "/home/stoffi05/Downloads/worttrainer.save");
     }
 
     public void load() {
-        //TODO: Implement
+        this.wt = SaveLoadHelper.load("/home/stoffi05/Downloads/worttrainer.save");
+        this.v.update();
     }
 
     public void newGame() {
@@ -48,7 +50,7 @@ public class Controller {
     }
 
     public void addWord(String input) {
-        //TODO: Implement
+        wt.addWord(input.split(", ")[0], input.split(", ")[1]);
+        v.update();
     }
-
 }
