@@ -34,6 +34,8 @@ public class Controller {
     }
 
     public void check() {
+        if(v.getInput() == null ) return;
+
         wt.checkSelectedWord(v.getInput());
         wt.pickRandomWord();
         v.update();
