@@ -6,7 +6,7 @@ import at.czlabinger.view.View;
 
 public class Controller {
     public static void main(String[] args) {
-        Controller c = new Controller();
+        new Controller();
     }
 
     private View v;
@@ -50,7 +50,7 @@ public class Controller {
     }
 
     public void addWord(String input) {
-        wt.getWortListe().addWord(input.split(", ")[0], input.split(", ")[1]);
+        wt.addWord(input.split(", ")[0], input.split(", ")[1]);
         v.update();
     }
 }
