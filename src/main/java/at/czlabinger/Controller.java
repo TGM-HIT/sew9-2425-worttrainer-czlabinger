@@ -16,7 +16,7 @@ public class Controller {
         try {
             this.wt = SaveLoadHelper.load("/home/stoffi05/Downloads/worttrainer.save");
         } catch (RuntimeException e) {
-            this.wt = new WortTrainer(new String[]{"Hund", "Katze"}, new String[]{"https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/800px-Cat_November_2010-1a.jpg"});
+            this.wt = new WortTrainer(new String[]{"Dog", "Cat"}, new String[]{"https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/800px-Cat_November_2010-1a.jpg"});
         }
         this.v = new View(this);
     }
@@ -51,7 +51,7 @@ public class Controller {
     }
 
     public void newGame() {
-        this.wt = new WortTrainer(new String[]{"Hund"}, new String[]{"https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg"});
+        this.wt = new WortTrainer(new String[]{"Dog"}, new String[]{"https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg"});
         this.v.update();
     }
 
