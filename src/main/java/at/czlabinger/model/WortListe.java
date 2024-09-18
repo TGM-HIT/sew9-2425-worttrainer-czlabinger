@@ -7,6 +7,11 @@ public class WortListe implements Serializable {
     private WortEintrag[] words;
 
     public WortListe(String[] words, String[] urls) {
+
+        if(words.length != urls.length) {
+            throw new IllegalArgumentException("Words and urls must be the same length");
+        }
+
         this.words = new WortEintrag[words.length];
         for (int i = 0; i < words.length; i++) {
             this.words[i] = new WortEintrag(words[i], urls[i]);
