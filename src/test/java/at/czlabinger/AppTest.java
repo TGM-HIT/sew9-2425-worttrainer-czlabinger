@@ -1,6 +1,7 @@
 package at.czlabinger;
 
 import at.czlabinger.model.SaveLoadHelper;
+import at.czlabinger.model.WortListe;
 import at.czlabinger.model.WortTrainer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,7 +15,7 @@ public class AppTest {
 
     @BeforeEach
     public void setup() {
-        wt = new WortTrainer(new String[]{"Haus"}, new String[]{"https://www.haus.at"});
+        wt = new WortTrainer(new WortListe(new String[]{"Haus"}, new String[]{"https://www.haus.at"}));
     }
 
     @Test
