@@ -26,18 +26,22 @@ public class WortTrainer implements Serializable {
         return this.wl.getWord(selectedIndex);
     }
 
-    public void checkSelectedWord(String input) {
+    public boolean checkSelectedWord(String input) {
         eingaben++;
         if(this.wl.getWord(selectedIndex).equals(input)) {
             richtig++;
+            return true;
         }
+        return false;
     }
 
-    public void checkSelectedWordIgnoreCase(String input) {
+    public boolean checkSelectedWordIgnoreCase(String input) {
         eingaben++;
         if(this.wl.getWord(selectedIndex).equalsIgnoreCase(input)) {
             richtig++;
+            return true;
         }
+        return false;
     }
 
     public void addWord(String word, String url) {
