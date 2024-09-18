@@ -5,9 +5,9 @@ import at.czlabinger.Controller;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.net.URI;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 public class View {
@@ -82,13 +82,14 @@ public class View {
 
     public void update() {
         try {
-            URL url = new URL(c.getImageUrl());
+            URI uri = new URI(c.getImageUrl());
+            URL url = uri.toURL();
             ImageIcon imageIcon = new ImageIcon(ImageIO.read(url));
             Image image = imageIcon.getImage();
             Image newimg = image.getScaledInstance(220, 220,  java.awt.Image.SCALE_SMOOTH);
             imageIcon = new ImageIcon(newimg);
             imageLabel.setIcon(imageIcon);
-        } catch (IOException e) {
+        } catch (IOException | URISyntaxException e) {
             throw new RuntimeException(e);
         }
         this.textField.setText("");
