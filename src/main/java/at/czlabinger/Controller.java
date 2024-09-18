@@ -10,7 +10,7 @@ public class Controller {
         new Controller();
     }
 
-    private View v;
+    private final View v;
     private WortTrainer wt;
 
     public Controller() {
