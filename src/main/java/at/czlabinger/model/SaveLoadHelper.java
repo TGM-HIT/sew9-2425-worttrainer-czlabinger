@@ -9,7 +9,7 @@ public class SaveLoadHelper {
 
     @Setter
     @Getter
-    private static boolean json;
+    private static boolean json = false;
 
     public static void save(WortTrainer wt, String path) {
         if(json) {
