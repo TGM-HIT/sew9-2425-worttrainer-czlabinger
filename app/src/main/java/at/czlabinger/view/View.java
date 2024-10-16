@@ -7,6 +7,7 @@ import java.net.URI;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import at.czlabinger.Controller;
 
 public class View {
 
