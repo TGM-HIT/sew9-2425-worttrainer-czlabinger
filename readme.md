@@ -12,10 +12,10 @@ git clone https://github.com/TGM-HIT/sew9-2425-worttrainer-czlabinger.git
 cd sew9-2425-worttrainer-czlabinger
 
 # Build jar
-mvn clean package -DskipTests
+gradle clean build
 
 # Run jar
-java -jar target/worttrainer-1.0-SNAPSHOT.jar
+java -jar app/build/libs/app-1.0-SNAPSHOT.jar
 ```
 
 ## Usage
