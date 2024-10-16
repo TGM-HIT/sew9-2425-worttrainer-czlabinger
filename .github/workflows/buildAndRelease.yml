@@ -17,44 +17,14 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: Build with Gradle
-        run: ./gradlew clean build
 
-      - name: Archive JAR
-        uses: actions/upload-artifact@v3
+      - name: Upload JAR to release
+        uses: ncipollo/release-action@v1
         with:
-          name: worttrainer-jar
-          path: app/build/libs/*.jar
-
-  release:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Download the JAR
-        uses: actions/download-artifact@v3
-        with:
-          name: worttrainer-jar
-          path: .
-
-      - name: debug
-        run: ls -la
-
-      - name: Create GitHub Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Automatically provided by GitHub Actions
-        with:
-          tag_name: ${{ github.run_number }}  # Use the cleaned tag name
-          release_name: Release ${{ github.run_number }}
+          artifacts: app/build/libs/*.jar
+          token: ${{ secrets.GITHUB_TOKEN }} 
+          tag: ${{ github.run_number }}
+          release_name: ${{ github.run_number }}
+          body: "Automated release of JAR file nr  ${{ github.run_number }}"
           draft: false
           prerelease: false
-
-      - name: Upload JAR to Release
-        uses: actions/upload-release-asset@v1
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./app-1.0-SNAPSHOT.jar
-          asset_name: worttrainer.jar
-          asset_content_type: application/java-archive
