@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'maven-publish'
 }
 
 group = 'at.czlabinger'
@@ -28,29 +27,4 @@ dependencies {
 
     // JSON
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.0'
-}
-
-test {
-    useJUnitPlatform()
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
-}
-
-tasks.withType(JavaCompile) {
-    options.compilerArgs += ["--enable-preview"]
-}
-
-jar {
-    manifest {
-        attributes(
-                'Main-Class': 'at.czlabinger.Controller',
-                'Class-Path': 'lib/'
-        )
-    }
 }
