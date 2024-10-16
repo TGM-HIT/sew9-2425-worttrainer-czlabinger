@@ -1,7 +1,5 @@
 package at.czlabinger.view;
 
-import at.czlabinger.Controller;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
