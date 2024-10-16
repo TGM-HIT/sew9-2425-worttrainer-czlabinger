@@ -37,6 +37,9 @@ jobs:
           name: worttrainer-jar
           path: .
 
+      - name: debug
+        run: ls -la
+
       - name: Create GitHub Release
         id: create_release
         uses: actions/create-release@v1
