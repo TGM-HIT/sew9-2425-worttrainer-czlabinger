@@ -43,8 +43,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Automatically provided by GitHub Actions
         with:
-          tag_name: ${{ github.ref_name }}  # Use the cleaned tag name
-          release_name: Release ${{ github.ref_name }}
+          tag_name: ${{ github.run_number }}  # Use the cleaned tag name
+          release_name: Release ${{ github.run_number }}
           draft: false
           prerelease: false
 
