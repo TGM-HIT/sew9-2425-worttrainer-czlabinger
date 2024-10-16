@@ -16,11 +16,14 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
+          
+      - name: Build with Gradle
+        run: ./gradlew clean build
 
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: build/libs/*.jar
+          artifacts: app/build/libs/*.jar
           token: ${{ secrets.GITHUB_TOKEN }} 
           tag: ${{ github.run_number }}
           release_name: ${{ github.run_number }}
