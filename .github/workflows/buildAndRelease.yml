@@ -22,11 +22,10 @@ jobs:
         run: ./gradlew clean build
 
       - name: Archive JAR
-      - uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
-          name: Package
-          path: build/libs/*.jar
-          retention-days: 1
+          name: worttrainer-jar
+          path: app/build/libs/*.jar
 
   release:
     needs: build
@@ -36,7 +35,7 @@ jobs:
       - name: Download the JAR
         uses: actions/download-artifact@v3
         with:
-          name: Package
+          name: worttrainer-jar
           path: .
 
       - name: Create GitHub Release
