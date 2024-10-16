@@ -1,6 +1,7 @@
 package at.czlabinger;
 
-import at.czlabinger.model.SaveLoadHelper;
+import at.czlabinger.model.SaveLoad;
+import at.czlabinger.model.SaveObject;
 import at.czlabinger.model.WortListe;
 import at.czlabinger.model.WortTrainer;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,9 +33,10 @@ public class AppTest {
 
     @Test
     public void saveLoadTest() {
-        SaveLoadHelper.save(wt, "/home/stoffi05/Downloads/worttrainer.save");
+        SaveLoad saveLoad = new SaveObject();
+        saveLoad.save(wt, "/home/stoffi05/Downloads/worttrainer.save");
         wt.checkSelectedWord("ada");
-        WortTrainer loaded = SaveLoadHelper.load("/home/stoffi05/Downloads/worttrainer.save");
+        WortTrainer loaded = saveLoad.load("/home/stoffi05/Downloads/worttrainer.save");
         assertNotEquals(wt, loaded);
     }
 }

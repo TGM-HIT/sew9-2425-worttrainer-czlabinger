@@ -1,6 +1,7 @@
 package at.czlabinger;
 
-import at.czlabinger.model.SaveLoadHelper;
+import at.czlabinger.model.SaveLoad;
+import at.czlabinger.model.SaveObject;
 import at.czlabinger.model.WortListe;
 import at.czlabinger.model.WortTrainer;
 import at.czlabinger.view.View;
@@ -12,10 +13,11 @@ public class Controller {
 
     private final View v;
     private WortTrainer wt;
+    private final SaveLoad saveLoad = new SaveObject();
 
     public Controller() {
         try {
-            this.wt = SaveLoadHelper.load("/home/stoffi05/Downloads/worttrainer.save");
+            this.wt = saveLoad.load("/home/stoffi05/Downloads/worttrainer.save");
         } catch (RuntimeException e) {
             this.wt = new WortTrainer(new WortListe(new String[]{"Dog", "Cat"}, new String[]{"https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/800px-Cat_November_2010-1a.jpg"}));
         }
@@ -43,11 +45,11 @@ public class Controller {
     }
 
     public void save() {
-        SaveLoadHelper.save(this.wt, "/home/stoffi05/Downloads/worttrainer.save");
+        saveLoad.save(this.wt, "/home/stoffi05/Downloads/worttrainer.save");
     }
 
     public void load() {
-        this.wt = SaveLoadHelper.load("/home/stoffi05/Downloads/worttrainer.save");
+        this.wt = saveLoad.load("/home/stoffi05/Downloads/worttrainer.save");
         this.v.update();
     }
 

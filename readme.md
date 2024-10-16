@@ -3,7 +3,7 @@
 ## Dependencies
 
 * Jdk21
-* maven
+* gradle
 
 ## Installation
 ```bash
