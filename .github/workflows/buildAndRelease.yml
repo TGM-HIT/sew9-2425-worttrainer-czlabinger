@@ -17,14 +17,13 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-
-      - name: Upload JAR to release
+      - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: app/build/libs/*.jar
+          artifacts: build/libs/*.jar
           token: ${{ secrets.GITHUB_TOKEN }} 
           tag: ${{ github.run_number }}
           release_name: ${{ github.run_number }}
-          body: "Automated release of JAR file nr  ${{ github.run_number }}"
+          body: "Automated release of JAR file NR ${{ github.run_number }}"
           draft: false
           prerelease: false
