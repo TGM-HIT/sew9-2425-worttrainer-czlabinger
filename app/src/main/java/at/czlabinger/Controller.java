@@ -22,6 +22,7 @@ public class Controller {
             this.wt = new WortTrainer(new WortListe(new String[]{"Dog", "Cat"}, new String[]{"https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/800px-Cat_November_2010-1a.jpg"}));
         }
         this.v = new View(this);
+        v.update();
     }
 
     public String getImageUrl() {
@@ -60,6 +61,15 @@ public class Controller {
 
     public void addWord(String input) {
         wt.addWord(input.split(", ")[0], input.split(", ")[1]);
+        v.update();
+    }
+    
+    /**
+     *  This function selects a new Random word in case that the current word has a invalid URL
+     *  Gets called by the View
+     */
+    public void selectRandomNewWord() {
+        wt.pickRandomWord();
         v.update();
     }
 }
