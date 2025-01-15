@@ -54,7 +54,6 @@ public class View {
         panel.add(panelS, BorderLayout.SOUTH);
 
         frame.add(panel);
-        this.update();
         frame.setVisible(true);
         frame.setSize(new Dimension(550, 350));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -79,6 +78,10 @@ public class View {
         return this.textField.getText();
     }
 
+    /**
+     *  This Method updates the view. 
+     *  It sets the Image icon and labels and textflied
+     */
     public void update() {
         try {
             URI uri = new URI(c.getImageUrl());
@@ -88,12 +91,12 @@ public class View {
             Image newimg = image.getScaledInstance(220, 220,  java.awt.Image.SCALE_SMOOTH);
             imageIcon = new ImageIcon(newimg);
             imageLabel.setIcon(imageIcon);
+            this.textField.setText("");
+            this.correct.setText("Richtig: " + c.getCorrect());
+            this.inputs.setText("Angezeigt: " + c.getInputs());
         } catch (IOException | URISyntaxException e) {
-            throw new RuntimeException(e);
+            c.selectRandomNewWord();
         }
-        this.textField.setText("");
-        this.correct.setText("Richtig: " + c.getCorrect());
-        this.inputs.setText("Angezeigt: " + c.getInputs());
     }
 
 }
